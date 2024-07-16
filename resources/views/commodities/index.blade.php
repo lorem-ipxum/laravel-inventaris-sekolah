@@ -7,23 +7,7 @@
 			@include('utilities.alert')
 			<div class="d-flex justify-content-end mb-3">
 				<div class="btn-group">
-					@can('import barang')
-					<button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#excel_menu">
-						<i class="fas fa-fw fa-upload"></i>
-						Import Excel
-					</button>
-					@endcan
 
-					@can('export barang')
-					<form action="{{ route('barang.export') }}" method="POST">
-						@csrf
-
-						<button type="submit" class="btn btn-success mr-2">
-							<i class="fas fa-fw fa-download"></i>
-							Export Excel
-						</button>
-					</form>
-					@endcan
 
 					@can('tambah barang')
 					<button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#commodity_create_modal">
@@ -43,69 +27,6 @@
 					@endcan
 				</div>
 			</div>
-
-			<x-filter>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="form-group">
-							<label for="commodity_location_id">Lokasi Barang:</label>
-							<select name="commodity_location_id" id="commodity_location_id" class="form-control">
-								<option value="">Pilih lokasi barang..</option>
-								@foreach ($commodity_locations as $commodity_location)
-								<option value="{{ $commodity_location->id }}"
-									@selected(request('commodity_location_id')==$commodity_location->id)>{{
-									$commodity_location->name
-									}}</option>
-								@endforeach
-							</select>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<label for="school_operational_assistance_id">Asal Perolehan:</label>
-							<select name="school_operational_assistance_id" id="school_operational_assistance_id"
-								class="form-control">
-								<option value="">Pilih asal perolehan..</option>
-								@foreach ($school_operational_assistances as $school_operational_assistance)
-								<option value="{{ $school_operational_assistance->id }}"
-									@selected(request('school_operational_assistance_id')==$school_operational_assistance->id)>{{
-									$school_operational_assistance->name }}
-								</option>
-								@endforeach
-							</select>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-
-					<div class="col-md-6">
-						<div class="form-group">
-							<label for="condition">Kondisi:</label>
-							<select name="condition" id="condition" class="form-control">
-								<option value="">Pilih kondisi..</option>
-								<option value="1" @selected(request('condition')==1)>Baik</option>
-								<option value="2" @selected(request('condition')==2)>Kurang Baik</option>
-								<option value="3" @selected(request('condition')==3)>Rusak Berat</option>
-							</select>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<label for="year_of_purchase">Tahun Pembelian:</label>
-							<select name="year_of_purchase" id="year_of_purchase" class="form-control">
-								<option value="">Pilih tahun pembelian..</option>
-								@foreach ($year_of_purchases as $year_of_purchase)
-								<option value="{{ $year_of_purchase }}" @selected(request('year_of_purchase')==$year_of_purchase)>{{
-									$year_of_purchase }}</option>
-								@endforeach
-							</select>
-						</div>
-					</div>
-				</div>
-
-				<x-slot name="resetFilterURL">{{ route('barang.index') }}</x-slot>
-			</x-filter>
 
 			<div class="row">
 				<div class="col-lg-12">
