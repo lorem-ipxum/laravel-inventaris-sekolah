@@ -96,18 +96,6 @@
 									Ruangan</span></a>
 						</li>
 						@endcan
-						<li class="menu-header">Pengaturan</li>
-						@can('mengatur profile')
-						<li class="nav-item dropdown{{ request()->routeIs('profile.index') ? ' active' : '' }}">
-							<a href="{{ route('profile.index') }}" class="nav-link"><i class="fas fa-cog"></i> <span>Pengaturan
-									Profil</span></a>
-						</li>
-						@endcan @can('lihat peran dan hak akses')
-						<li class="nav-item dropdown{{ request()->routeIs('peran-dan-hak-akses.index') ? ' active' : '' }}">
-							<a href="{{ route('peran-dan-hak-akses.index') }}" class="nav-link"><i class="fas fa-user-shield"></i>
-								<span>Peran & Hak Akses</span></a>
-						</li>
-						@endcan
 					</ul>
 
 					<div class="mt-4 mb-4 p-3 hide-sidebar-mini">
