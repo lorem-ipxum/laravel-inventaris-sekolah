@@ -95,11 +95,6 @@
 							<a href="{{ route('ruangan.index') }}" class="nav-link"><i class="fas fa-map-location-dot"></i> <span>Data
 									Ruangan</span></a>
 						</li>
-						@endcan @can('lihat pengguna')
-						<li class="nav-item dropdown{{ request()->routeIs('pengguna.index') ? ' active' : '' }}">
-							<a href="{{ route('pengguna.index') }}" class="nav-link"><i class="fas fa-users"></i> <span>Data
-									Pengguna</span></a>
-						</li>
 						@endcan
 						<li class="menu-header">Pengaturan</li>
 						@can('mengatur profile')
