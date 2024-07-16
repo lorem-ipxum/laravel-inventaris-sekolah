@@ -7,24 +7,6 @@
 			@include('utilities.alert')
 			<div class="d-flex justify-content-end mb-3">
 				<div class="btn-group">
-					@can('import ruangan')
-					<button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#excel_menu">
-						<i class="fas fa-fw fa-upload"></i>
-						Import Excel
-					</button>
-					@endcan
-
-					@can('export ruangan')
-					<form action="{{ route('ruangan.export') }}" method="POST">
-						@csrf
-
-						<button type="submit" class="btn btn-success mr-2">
-							<i class="fas fa-fw fa-download"></i>
-							Export Excel
-						</button>
-					</form>
-					@endcan
-
 					@can('tambah ruangan')
 					<button type="button" class="btn btn-primary" data-toggle="modal"
 						data-target="#commodity_location_create_modal">
