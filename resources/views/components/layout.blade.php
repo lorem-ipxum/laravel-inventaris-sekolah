@@ -41,13 +41,13 @@
 							<div class="d-sm-none d-lg-inline-block">Halo, {{ auth()->user()->name }}</div>
 						</a>
 						<div class="dropdown-menu dropdown-menu-right">
-							<div class="dropdown-title">Akun sejak: {{ auth()->user()->diffForHumanDate(auth()->user()->created_at) }}
+							{{-- <div class="dropdown-title">Akun sejak: {{ auth()->user()->diffForHumanDate(auth()->user()->created_at) }}
 							</div>
 							@can('mengatur profile')
 							<a href="{{ route('profile.index') }}" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
 								Pengaturan Profil </a>
-							@endcan
-							<div class="dropdown-divider"></div>
+							@endcan --}}
+							{{-- <div class="dropdown-divider"></div> --}}
 							{{--
 							<a class="dropdown-item has-icon text-danger" href="{{ route('logout') }}">
 								<i class="fas fa-sign-out-alt"></i>
