@@ -73,55 +73,9 @@
 				</x-bar-chart>
 			</div>
 		</div>
-
-		{{-- <div class="col-md-6 col-lg-4">
-			<div class="card">
-				<div class="card-header">
-					<h4>5 Barang Termahal</h4>
-				</div>
-				<div class="card-body">
-					@foreach($commodity_order_by_price as $key => $order_by_price)
-					<ul class="list-unstyled list-unstyled-border">
-						<li class="media">
-							<!-- <img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-1.png" alt="avatar"> -->
-							<div class="media-body">
-								@can('detail barang')
-								<button data-id="{{ $order_by_price->id }}" class="float-right btn btn-info btn-sm show-modal"
-									data-toggle="modal" data-target="#show_commodity">Detail</button>
-								@endcan
-								<div class="media-title">{{ $order_by_price->name }}</div>
-								<span class="text-small text-muted">Harga: Rp{{
-									$order_by_price->indonesian_currency($order_by_price->price) }}</span>
-							</div>
-						</li>
-					</ul>
-					@endforeach
-					@can('lihat barang')
-					<div class="text-center pt-1 pb-1">
-						<a href="{{ route('barang.index') }}" class="btn btn-primary btn-lg btn-round">
-							Lihat Semua Barang
-						</a>
-					</div>
-					@endcan
-				</div>
-			</div>
-		</div> --}}
 	</div>
 
-	<div class="row">
-		<div class="col-lg-12">
-			<x-bar-chart chartTitle="Grafik Jumlah Barang Berdasarkan Tahun Pembelian" chartID="chartCommodityCountEachYear"
-				:series="$charts['commodity_each_year_of_purchase_count']['series']"
-				:categories="$charts['commodity_each_year_of_purchase_count']['categories']">
-			</x-bar-chart>
-		</div>
-		<div class="col-lg-12">
-			<x-bar-chart chartTitle="Grafik Jumlah Barang Berdasarkan Ruangan" chartID="chartCommodityCountEachLocation"
-				:series="$charts['commodity_each_location_count']['series']"
-				:categories="$charts['commodity_each_location_count']['categories']">
-			</x-bar-chart>
-		</div>
-	</div>
+
 
 	@push('modal')
 	@include('commodities.modal.show')
